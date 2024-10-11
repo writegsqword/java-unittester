@@ -28,7 +28,12 @@ public static boolean TestMethod(String methodName, Object result, Object... arg
         catch(Exception e){ 
             //pass
         }
-        return (testResult.toString().equals(result.toString()));
+        boolean pass = testResult.toString().equals(result.toString());
+        if(!pass) { 
+            System.out.println("Failed unit test on: " + methodName);
+            return pass;
+        }
+        System.out.println(methodName + " output: " + testResult.toString());
 
     } catch(Exception e){ 
         e.printStackTrace();
