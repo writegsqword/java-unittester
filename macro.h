@@ -5,7 +5,7 @@
     System.out.println(#METHOD_NAME + __NL__ \
     " Output " + #idx + ": " + __NL__  \
     result.toString() + "\n"); __NL__ __NL__\
-    if (!((Object)expected).toString().equals(result.toString())) { __NL__ \
-    __TAB__ System.out.println("FAILED: " + #METHOD_NAME + " " + #idx); __NL__  \
+    if (!((Object)expected).toString()__NL__.equals(result.toString())) { __NL__ \
+    __TAB__ System.out.println("FAILED: " + __NL__ #METHOD_NAME + " " + #idx); __NL__  \
     __TAB__ return false; __NL__ \
     }

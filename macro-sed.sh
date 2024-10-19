@@ -1,5 +1,5 @@
 set -e
-newname="${1}.java"
+newname="$(echo $1 | sed 's/\./_processed./g')"
 tmpname="${newname}.temp"
 echo "Output: " $newname
 cpp $1 $newname -C
