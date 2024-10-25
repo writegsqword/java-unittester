@@ -1,0 +1,9 @@
+
+
+
+DELIMIT_TOKEN = "// Test(s)"
+END_TEST_TOKEN = "// All test cases passed!"
+COMMENT_TOKEN = "//"
+#IDX_WILDCARD_TOKEN = "__INDEX__"
+VARDECL_WILDCARD_TOKEN = "__VARDECL__"
+VARDEF_WILDCARD_TOKEN = "__VARDEF__"
