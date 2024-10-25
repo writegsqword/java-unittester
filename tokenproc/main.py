@@ -61,8 +61,12 @@ def parse_utest(utest_lines : list) -> list:
             var_tokens[vdeftok] = cfg.VARDEF_WILDCARD_TOKEN + ";\n"
     
     utest_parsed = copy.deepcopy(utest_lines)
+    #print(utest_parsed)
     for k,v in var_tokens.items():
         for i, l in enumerate(utest_parsed):
+            #dont substitute returns lol
+            if cfg.RETURN_TOKEN in l:
+                continue
             utest_parsed[i] = l.replace(k, v)
 
     #last pass, sub all prompt tokens
@@ -99,12 +103,12 @@ def main():
     utests_parsed = {}
     for k, v  in utests.items():
         utests_parsed[k] = parse_utest(v)
-    print(utests_parsed["calculateYearlyBonus"])
+    
     tests = ["1200", "2", "true", "false", "1375.0"]
-    print(gen_utest(utests_parsed["calculateYearlyBonus"], 1, tests))
+    ut = utests_parsed["calculateApartmentCost"]
 
     for i in range(1, 4):
-        print(gen_utest(utests_parsed["calculateYearlyBonus"], i, tests))
+        print(gen_utest(ut, i, tests))
         pass
 
         
